@@ -54,13 +54,13 @@
 
 > 对于ex1_13a.c中的块结构的C代码，指出赋值给w、x、y、z的值。
 
-@import "ex1_13a.c"
+[ex1_13a.c](./ex1_13a.c)
 
 ## Exercise 1.6.2
 
 > 对于ex1_13b.c中的代码重复练习。
 
-@import "ex1_13b.c"
+[ex1_13b.c](./ex1_13b.c)
 
 ## Exercise 1.6.3
 
@@ -97,4 +97,4 @@ Block B5:
 
 > ex1_15.c的代码打印结果式什么？
 
-@import "ex1_15.c"
+[ex1_15.c](./ex1_15.c)
