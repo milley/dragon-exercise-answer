@@ -3,7 +3,7 @@
  */
 void S() {
   /* S->0 S 1 | 0 1 */
-  switch(lookahead) {
+  switch (lookahead) {
     case "0":
       match("0");
       S();
