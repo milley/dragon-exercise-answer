@@ -306,3 +306,17 @@ expr -> expr expr op | digit
 ```
 expr -> {print(op)} expr expr op | digit {print(digit)}
 ```
+
+## Exercise 2.4.1
+
+为下列文法构造递归下降语法分析器：
+
+1. S->+ S S | - S S | a
+2. S->S ( S ) S | ε
+3. S->0 S 1 | 0 1
+
+### 2.4.1 Answer
+
+1. [2_4_1_1](./src/2_4_1_1.c)
+2. [2_4_1_2](./src/2_4_1_2.c)
+3. [2_4_1_3](./src/2_4_1_3.c)
