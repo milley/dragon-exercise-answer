@@ -320,3 +320,62 @@ expr -> {print(op)} expr expr op | digit {print(digit)}
 1. [2_4_1_1](./src/2_4_1_1.c)
 2. [2_4_1_2](./src/2_4_1_2.c)
 3. [2_4_1_3](./src/2_4_1_3.c)
+
+## Exercise 2.6.1
+
+扩展2.6.5节中的词法分析器以消除注释。注释的定义如下：
+
+1. 以//开始的注释，包括从它开始到这一行的结尾的所有字符
+2. 以/* 开始的注释，包括从它开始到后面第一次出现的字符序列 */之间的所有字符。
+
+## Exercise 2.6.2
+
+扩展2.6.5节中的词法分析器，使它能够识别关系运算符<、<=、==、!=、>=、>。
+
+## Exercise 2.6.3
+
+扩展2.6.5节中的词法分析器，使它能够识别浮点数，比如2、3.14和.5等。
+
+### 2.6.1-2.6.3 Answer
+
+[Lexer.java](./src/answer/lexer/Lexer.java)
+
+## Exercise 2.8.1
+
+C语言和Java语言中的for语句具有如下形式：
+
+for(expr1; expr2; expr3) stmt
+
+第一个表达式在循环之前执行，它通常被用来初始化循环下标。第二个表达式是一个测试，它在循环的每次迭代之前进行。如果这个表达式的结果变成0，就退出循环。循环本身可以被看作语句{stmt expr3;}。第三个表达式在每一次迭代的末尾执行，它通常用来使循环下标递增。故for语句的含义类似于
+
+expr1; while(expr2); { stmp expr3; }
+
+仿照图2-43中的类If，为for语句定义一个类For。
+
+### 2.8.1 Answer
+
+[For.java](./src/answer/For.java)
+
+## Exercise 2.8.2
+
+程序设计语言C中没有布尔类型。试说明C语言的编译器可能使用什么方法将一个if语句翻译成为三地址代码。
+
+### 2.8.2 Answer
+
+Relpace
+
+```java
+emit("ifFalse " + E.rvalue().toString() + " goto " + after);
+```
+
+with
+
+```java
+emit("ifEqual " + E.rvalue().toString() + " 0 goto " + after);
+```
+
+or
+
+```java
+emit("ifEqualZero " + E.rvalue().toString() + " goto " + after);
+```
