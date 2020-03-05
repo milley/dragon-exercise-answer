@@ -278,7 +278,7 @@ SQL语言支持一种不成熟的模式扫描方式，其中有两个具有特�
 
 ### Answer 3.4.1
 
-1) a(a|b)*a
+1) a(a|b)\*a
 
 DFA:
 
@@ -289,4 +289,24 @@ DFA:
 | {2,3,4,5,7,8,9} | C | C | D |
 | {2,3,5,6,7,8} | D | C | D |
 
+<img src="./src/answer/img/ans_3_4_1_1.jpg" width="60%" >
+
+2) ((ε|a)b\*)\*
+
+<img src="./src/answer/img/ans_3_4_1_2.jpg" width="60%" >
+
+3) (a|b)\*a(a|b)(a|b)
+
+<img src="./src/answer/img/ans_3_4_1_3.jpg" width="60%" >
+
+4) a\*ba\*ba\*ba\*
+
 <img src="./src/answer/img/ans_3_4_1_4.jpg" width="60%" >
+
+5) (aa|bb)\*((ab|ba)(aa|bb)\*(ab|ba)(aa|bb)\*)\*
+
+<img src="./src/answer/img/ans_3_4_1_5.jpg" width="60%" >
+
+## Exercise 3.4.2
+
+给出识别练习3.3.5中各个正则表达式所描述的语言的状态转换图。
