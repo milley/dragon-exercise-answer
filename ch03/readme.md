@@ -584,3 +584,194 @@ for (i = 0; i < n; i++) {
 | 2 | {2} | ∅ | ∅ |
 | 3 | ∅ | {4} | ∅ |
 | 4 | ∅ | {4} | ∅ |
+
+## Exercise 3.7.1
+
+将下列图中的NFA转换为DFA。
+
+1) 图3-26
+
+2) 图3-29
+
+3) 图3-30
+
+### Answer 3.7.1
+
+1)
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,3} | A | B | C |
+| {2} | B | B | ∅ |
+| {4} | C | ∅ | C |
+
+<img src="./src/answer/img/ans_3_7_1_1.jpg" width="60%" >
+
+2)
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0} | A | B | A |
+| {0,1} | B | C | B |
+| {0,1,2} | C | C | D |
+| {0,2,3} | D | C | D |
+
+<img src="./src/answer/img/ans_3_7_1_2.jpg" width="60%" >
+
+3)
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,2,3} | A | A | A |
+
+<img src="./src/answer/img/ans_3_7_1_3.jpg" width="60%" >
+
+## Exercise 3.7.2
+
+用算法3.22模拟下列图的NFA在处理输入aabb时的过程。
+
+1) 图3-29
+
+2) 图3-30
+
+### Answer 3.7.2
+
+1) -start->{0}-a->{0,1}-a->{0,1,2}-b->{0,2,3}-b->{0,2,3}
+
+2) -start->{0,1,2,3}-a->{0,1,2,3}-a->{0,1,2,3}-b->{0,1,2,3}-b->{0,1,2,3}
+
+## Exercise 3.7.3
+
+使用算法3.23和3.20将下列正则表达式转换成DFA。
+
+1) (a|b)\*
+
+2) (a\*|b\*)\*
+
+3) ((ε|a)b\*)\*
+
+4) (a|b)\*abb(a|b)\*
+
+### Answer 3.7.3
+
+1)
+
+**NFA**
+
+<img src="./src/answer/img/ans_3_7_3_1_1.jpg" width="60%" >
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,2,3,7} | A | B | C |
+| {1,2,3,4,6,7} | B | B | C |
+| {1,2,3,5,6,7} | C | B | C |
+
+**DFA**
+
+<img src="./src/answer/img/ans_3_7_3_1_2.jpg" width="60%" >
+
+2)
+
+**NFA**
+
+<img src="./src/answer/img/ans_3_7_3_2_1.jpg" width="60%" >
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,2,3,4,5,8,9,10,11} | A | B | C |
+| {1,2,3,4,5,6,8,9,10,11} | B | B | C |
+| {1,2,3,4,5,7,8,9,10,11} | C | B | C |
+
+**DFA**
+
+<img src="./src/answer/img/ans_3_7_3_1_2.jpg" width="60%" >
+
+3)
+
+**NFA**
+
+<img src="./src/answer/img/ans_3_7_3_1_1.jpg" width="60%" >
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,2,3,4,6,7,9,10} | A | B | C |
+| {1,2,3,4,5,6,7,9,10} | B | B | C |
+| {1,2,3,4,6,7,8,9,10} | C | B | C |
+
+**DFA**
+
+<img src="./src/answer/img/ans_3_7_3_1_2.jpg" width="60%" >
+
+4)
+
+**NFA**
+
+<img src="./src/answer/img/ans_3_7_3_4_1.jpg" width="60%" >
+
+**Transition table**
+
+| NFA State | DFA State | a | b |
+|-----|-----|-----|---|
+| {0,1,2,4,7} | A | B | C |
+| {1,2,3,4,6,7,8} | B | B | D |
+| {1,2,4,5,6,7} | C | B | C |
+| {1,2,4,5,6,7,9} | D | B | E |
+| {1,2,4,5,6,7,10,11,12,14,17} | E | F | G |
+| {1,2,3,4,6,7,8,11,12,13,14,16,17} | F | F | H |
+| {1,2,4,5,6,7,11,12,13,15,16,17} | G | F | G |
+| {1,2,4,5,6,7,9,11,12,14,15,16,17} | H | F | I |
+| {1,2,4,5,6,7,10,11,12,14,15,16,17} | I | F | G |
+
+**DFA**
+
+<img src="./src/answer/img/ans_3_7_3_4_2.jpg" width="60%" >
+
+## Exercise 3.8.1
+
+假设我们有两个词法单元：(1)关键字if，(2)标识符，它表示除if之外的所有由字母组成的串。请给出：
+
+1) 识别这些词法单元的NFA。
+
+2) 识别这些词法单元的DFA。
+
+### Answer 3.8.1
+
+<img src="./src/answer/img/ans_3_8_1.jpg" width="60%" >
+
+## Exercise 3.8.2
+
+对如下的词法单元重复练习3.8.1：(1)关键字while，(2)关键字when，(3)标识符，它代表以字母开头，由字母和数字组成的字符串。
+
+### Answer 3.8.2
+
+<img src="./src/answer/img/ans_3_8_2.jpg" width="60%" >
+
+## Exercise 3.8.3
+
+假设我们修正DFA的定义，使得每个状态在每个输入符号上有零个或一个转换（而不是像标准的DFA定义中那样恰好有一个转换）。那么，有些正则表达式就可以具有相比按标准定义构造得到的DFA而言更小的“DFA”。给出这种正则表达式的一个例子。
+
+### Answer 3.8.3
+
+<img src="./src/answer/img/ans_3_8_3.jpg" width="60%" >
+
+## Exercise 3.8.4
+
+设计一个算法来识别形如r1/r2的Lex向前看模式，其中r1和r2都是正则表达式。说明该算法如何处理如下输入：
+
+1) (abcd|abc)/d
+
+2) (a|ab)/ba
+
+3) aa\*/a\*
